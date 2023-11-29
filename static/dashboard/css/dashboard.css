@@ -1,0 +1,252 @@
+:root{
+    --color-1:#F8EDD5; 
+    --color-2:#97582A; 
+    --body-color: #FFFBF2;
+    --text-color: #5C5C5C;
+    --border-color:#acacac;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    background: var(--body-color) !important;
+    min-height: 100vh;
+}
+
+/*navbar-header*/
+.main-header{
+    background-color: var(--color-1);
+}
+
+.navbar{
+    background-color: var(--color-1);
+}
+
+.logo{
+    height: 75px;
+}
+
+.nav-link{
+    color: var(--color-2);
+}
+
+/* fim navbar*/
+
+/* banner */
+.banner {
+    position: absolute;
+    max-height: 50vh;
+    width: 100%;
+    z-index: -2;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 50vh;
+    align-items: center;
+    
+}
+
+.banner:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+      min-height: 50vh;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.main-title{
+    color: white;
+    z-index: 2;
+    position: relative;
+    margin: 16px 0;
+}
+
+.button-main{
+    z-index: 3;
+    background-color: white;
+    position: relative !important;
+    padding: 14px 55px;
+    border: transparent;
+    margin-top: 16px;
+    transition: .5s ease-in-out;
+
+}
+
+
+.button-main:hover{
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+
+/* fim banner */
+
+
+.all-products{
+    margin-top: 50vh;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(200px, 350px));
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 32px;
+    
+}
+
+.card-product{
+  cursor: pointer;
+  transition: .2s ease;
+    
+}
+
+.card-product:hover{
+    transform: scale(1.01);
+    
+}
+
+.photo-product{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border: 1px solid var(--border-color);
+
+}
+
+.sold-off{
+    position: absolute;
+    margin: 8px;
+    padding: 4px;
+    color: var(--text-color);
+    background-color: white;
+}
+
+.product-info{
+    color: var(--text-color);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 16px 0;
+}
+
+.product-price{
+    color: var(--border-color);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+        margin: 16px 0;
+
+}
+
+.detail{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(300px, 450px));
+    padding: 16px 32px;
+    column-gap: 64px;
+    justify-content: center;
+ 
+}
+
+.photo-product-detail{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+   
+    border: 1px solid var(--border-color);
+}
+
+.product-side-1{
+ 
+}
+.product-side-2{
+    justify-content: start;
+    display: flex;
+    align-items: center;
+ 
+}
+
+.title-description{
+    color: var(--text-color);
+    letter-spacing: 2px;
+    font-size: 21px;
+    margin-bottom: 32px;
+}
+
+.product-price-detail{
+    color: var(--border-color);
+    letter-spacing: 2px;
+    margin: 32px 0;
+    font-size: 21px;
+    
+}
+
+.button-standard{
+    width: 100%;
+    margin: 8px 0;
+    border: transparent;
+    color: var(--body-color);
+    padding: 8px 0;
+}
+
+.info-products-not-found{
+    color: var(--text-color);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.add{
+    background-color: #307A07;
+}
+.buy{
+    background-color: #97582A;
+}
+
+.description{
+    color: var(--text-color);
+}
+
+.btn-search{
+    background-color: var(--color-2);
+    color: white;
+}
+
+/* Ajuste o número de colunas para telas menores */
+@media screen and (max-width: 1200px) {
+    .all-products {
+        grid-template-columns: repeat(3, minmax(200px, 350px));
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .all-products {
+        grid-template-columns: repeat(2, minmax(200px, 350px));
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .detail{
+    display: grid;
+    grid-template-columns: repeat(1, minmax(300px, 450px));
+    padding: 16px 32px;
+    column-gap: 64px;
+    justify-content: center;
+ 
+}
+
+}
+
+@media screen and (max-width: 600px) {
+    .all-products {
+        grid-template-columns: repeat(1, minmax(200px, 350px));
+    }
+}
